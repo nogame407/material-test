@@ -1,0 +1,13 @@
+<?xml version="1.0" encoding="utf-8"?>
+	<resources>
+		<!-- Red Theme -->
+		<color name="primaryColorDark">#D32F2F</color>
+		<color name="primaryColor">#F44336</color>
+		<color name="primaryColorLight">#FFCDD2</color>
+		<color name="icons">#FFFFFF</color>
+		<color name="accentColor">#FF9800</color>
+		<color name="primaryText">#FFFFFF</color>
+		<color name="SecondaryText">#727272</color>
+		<color name="divider">#B6B6B6</color>
+	</resources>
+	
