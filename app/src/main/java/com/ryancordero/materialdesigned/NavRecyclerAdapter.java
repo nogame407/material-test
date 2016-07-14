@@ -21,20 +21,22 @@ public class NavRecyclerAdapter extends RecyclerView.Adapter<NavRecyclerAdapter.
 	private LayoutInflater inflater;
 	List<Information> data = Collections.emptyList();
 	private Context context;
-	
 
-	public NavRecyclerAdapter(Context context, List<Information> data) {
+
+	public NavRecyclerAdapter(Context context, List<Information> data)
+	{
 		this.context = context;
 		inflater = LayoutInflater.from(context);
 		this.data = data;
 	}
 
-	public void delete(int position) {
+	public void delete(int position)
+	{
 		data.remove(position);
 		notifyItemRemoved(position);
 	}
-	
-	
+
+
 	@Override
 	public MyViewHolder onCreateViewHolder(ViewGroup parent, int viewType)
 	{
@@ -49,35 +51,39 @@ public class NavRecyclerAdapter extends RecyclerView.Adapter<NavRecyclerAdapter.
 		Information current = data.get(position);
 		holder.title.setText(current.title);
 		holder.icon.setImageResource(current.iconID);
-		
+
 	}
 
 	@Override
-	public int getItemCount() { return data.size(); }
-	
-	class MyViewHolder extends RecyclerView.ViewHolder 	implements OnClickListener {
+	public int getItemCount()
+	{ return data.size(); }
+
+	class MyViewHolder extends RecyclerView.ViewHolder 	implements OnClickListener
+	{
 
 		TextView title;
 		ImageView icon;
-	
-		public MyViewHolder(View itemView) {
+
+		public MyViewHolder(View itemView)
+		{
 			super(itemView); 
 			itemView.setOnClickListener(this);
-			
+
 			title = (TextView) itemView.findViewById(R.id.listText);
 			icon = (ImageView) itemView.findViewById(R.id.listIcon);
-			
+
 		}
-		
+
 		@Override
-		public void onClick(View v) {
+		public void onClick(View v)
+		{
 			context.startActivity(new Intent(context, SubActivity.class));
-			
+
 		}
-		
-		
+
+
 	}
-	
-	
-	
+
+
+
 }

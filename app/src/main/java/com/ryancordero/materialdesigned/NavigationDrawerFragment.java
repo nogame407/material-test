@@ -47,8 +47,9 @@ public class NavigationDrawerFragment extends Fragment
 		mUserLearnedDrawer = Boolean.valueOf(readFromPreferences(getActivity(), KEY_USER_LEARNED_DRAWER, "false"));
 		Log.d(LOG_NAVIGATION_FRAGMENT, "mUserLearedDrawer Boolean set");
 
-		if (savedInstanceState != null) {
-			
+		if (savedInstanceState != null)
+		{
+
 			mFromSavedInstanceState = true;
 		}
 	}
@@ -56,42 +57,45 @@ public class NavigationDrawerFragment extends Fragment
 
 	public void setUp(int fragmentId, DrawerLayout drawerLayout, final Toolbar toolBar)
 	{
-		containerView=getActivity().findViewById(fragmentId);
-		
+		containerView = getActivity().findViewById(fragmentId);
+
 		mDrawerLayout = drawerLayout;
 		mDrawerToggle = new ActionBarDrawerToggle(getActivity(), drawerLayout, toolBar, R.string.drawer_open, R.string.drawer_close){
 
 			@Override
 			public void onDrawerOpened(View drawerView)
 			{
-				if(!mUserLearnedDrawer){
+				if (!mUserLearnedDrawer)
+				{
 					mUserLearnedDrawer = true;
-					saveToPreferences(getActivity(), KEY_USER_LEARNED_DRAWER, mUserLearnedDrawer+"");
+					saveToPreferences(getActivity(), KEY_USER_LEARNED_DRAWER, mUserLearnedDrawer + "");
 					super.onDrawerOpened(drawerView);
 				}
 				getActivity().invalidateOptionsMenu();
 			}
-			
+
 			@Override
 			public void onDrawerClosed(View drawerView)
 			{
 				getActivity().invalidateOptionsMenu();
 				super.onDrawerClosed(drawerView);
 			}
-			
+
 			@Override
 			public void onDrawerSlide(View drawerView, float slideOffset)
 			{
 				super.onDrawerSlide(drawerView, slideOffset);
-				if(slideOffset<0.6){
-					toolBar.setAlpha(1-slideOffset);
+				if (slideOffset < 0.6)
+				{
+					toolBar.setAlpha(1 - slideOffset);
 				}
 			}
-			
+
 		};
-		
-		if(!mUserLearnedDrawer && !mFromSavedInstanceState){
-			
+
+		if (!mUserLearnedDrawer && !mFromSavedInstanceState)
+		{
+
 			mDrawerLayout.openDrawer(containerView);
 		}
 
@@ -104,7 +108,7 @@ public class NavigationDrawerFragment extends Fragment
 				{
 					mDrawerToggle.syncState();
 				}
-		});
+			});
 	}
 
 
@@ -112,24 +116,24 @@ public class NavigationDrawerFragment extends Fragment
 	public View onCreateView(LayoutInflater inflater, ViewGroup container, Bundle savedInstanceState)
 	{
 		Log.d(LOG_NAVIGATION_FRAGMENT, "onCreateView Start");
-		
+
 		View layout = inflater.inflate(R.layout.fragment_navigation_drawer, container, false);
 		recyclerView = (RecyclerView) layout.findViewById(R.id.drawerList);
 		mAdapter = new NavRecyclerAdapter(getActivity(), getData());
 		recyclerView.setAdapter(mAdapter);
 		recyclerView.setLayoutManager(new LinearLayoutManager(getActivity()));
-		
+
 		Log.d(LOG_NAVIGATION_FRAGMENT, "RecyclerView finished");
-		
+
 		return layout;
 	}
-	
+
 	public static List<Information> getData() 
 	{	
 		List<Information> data = new ArrayList<>();
 		int[] icons={R.drawable.ic_number1, R.drawable.ic_number2, R.drawable.ic_number3, R.drawable.ic_number4};
 		String[] titles = {"Ryan", "Anthony", "Adrian", "Michael"};
-		for(int i = 0; i < titles.length && i < icons.length; i++)
+		for (int i = 0; i < titles.length && i < icons.length; i++)
 		{
 			Information current = new Information();
 			current.iconID = icons[i];
