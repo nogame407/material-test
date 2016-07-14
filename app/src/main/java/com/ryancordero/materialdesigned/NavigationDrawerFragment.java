@@ -19,7 +19,6 @@ import com.ryancordero.materialdesigned.Information;
 
 
 
-
 public class NavigationDrawerFragment extends Fragment
 {
 	private RecyclerView recyclerView;
