@@ -14,7 +14,6 @@ import java.util.List;
 import android.widget.Toast;
 import android.view.View.OnClickListener;
 import android.sax.Element;
-import android.telephony.SubscriptionInfo;
 import android.content.Intent;
 
 public class NavRecyclerAdapter extends RecyclerView.Adapter<NavRecyclerAdapter.MyViewHolder>
