@@ -1,36 +1,49 @@
 package com.ryancordero.materialdesigned;
-import android.support.v7.app.*;
-import android.os.*;
+
 import android.view.*;
-import android.support.v7.widget.*;
+
+import android.os.Bundle;
+import android.support.v4.app.NavUtils;
+import android.support.v7.app.ActionBarActivity;
+import android.support.v7.widget.Toolbar;
 
 public class SubActivity extends ActionBarActivity
 {
-	private Toolbar toolbar;
+
 	@Override
-	public void onCreate(Bundle savedInstanceState, PersistableBundle persistentState)
+	public void onCreate(Bundle savedInstanceState)
 	{
-		// TODO: Implement this method
-		super.onCreate(savedInstanceState, persistentState);
-		toolbar = (Toolbar) findViewById(R.id.app_bar);
+		
+		super.onCreate(savedInstanceState);
+		setContentView(R.layout.activity_sub);
+		
+		Toolbar toolbar = (Toolbar) findViewById(R.id.app_bar);
 		setSupportActionBar(toolbar);
+		
+		getSupportActionBar().setHomeButtonEnabled(true);
+		getSupportActionBar().setDisplayHomeAsUpEnabled(true);
+
+	}
+
+	
+	@Override
+	public boolean onCreateOptionsMenu(Menu menu)
+	{
+		getMenuInflater().inflate(R.menu.menu_main, menu);
+		return true;
 	}
 
 	@Override
 	public boolean onOptionsItemSelected(MenuItem item)
 	{
-		// TODO: Implement this method
+		int id = item.getItemId();
+		
+		if(id==android.R.id.home){
+			NavUtils.navigateUpFromSameTask(this);
+		}
+		
 		return super.onOptionsItemSelected(item);
 	}
 	
-	
 
-	@Override
-	public boolean onCreateOptionsMenu(Menu menu)
-	{
-		// TODO: Implement this method
-		getMenuInflater().inflate(R.menu.menu_main, menu);
-		return true;
-	}
-	
 }

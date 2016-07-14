@@ -1,9 +1,23 @@
 <?xml version="1.0" encoding="utf-8"?>
 <resources>
+    <string name="this_is_a_test_of_the_cardview">This is a test of the cardView</string>
+
+    <string name="dummy_text">Dummy Text</string>
+
+    <string name="menu_item_2">Menu item 2</string>
+
+    <string name="menu_item_1">Menu Item 1</string>
+
+    <string name="hello_blank_fragment">Hello blank fragment</string>
+
+    <string name="hello">hello!</string>
+
 
     <string name="app_name">Material Design</string>
     <string name="hello_world">Hello world!</string>
 	<string name="next">Next</string>
 	<string name="hello">Hello</string>
+	<string name="drawer_open">Open</string>
+	<string name="drawer_close">Close</string>
 
 </resources>

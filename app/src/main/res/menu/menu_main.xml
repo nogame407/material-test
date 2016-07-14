@@ -3,18 +3,24 @@
 	xmlns:app="http://schemas.android/apk/res-auto"
 	xmlns:tools="http://schemas.android.com/tools"
 	tools:context=".MainActivity">
-    
-    <item
-        android:id="@+id/action_settings"
-		android:orderInCategory="100"
-        android:title="@string/hello"
-		app:showAsAction="never"/>
-	
+
+
 	<item
 		android:id="@+id/navigate"
-		android:orderInCategory="200"
 		android:title="@string/next"
 		app:showAsAction="always"
-		android:icon="@drawable/ic_next"/>
+		android:icon="@drawable/ic_skip_next_white_24dp"/>
+
+	<item
+		android:id="@+id/hello"
+		android:title="@string/hello"/>
+
+	<item
+		android:id="@+id/Menu1"
+		android:title="@string/menu_item_1"/>
 	
+	<item
+		android:id="@+id/Menu2"
+		android:title="@string/menu_item_2"/>
+
 </menu>

@@ -1,0 +1,35 @@
+<org.lucasr.dspec.DesignSpecFrameLayout 
+	xmlns:android="http://schemas.android.com/apk/res/android"
+	xmlns:app="http://schemas.android.com/apk/res-auto"
+	android:layout_width="match_parent"
+	android:layout_height="match_parent"
+	app:designSpec="@raw/spec">
+
+	<RelativeLayout
+		xmlns:android="http://schemas.android.com/apk/res/android"
+		android:id="@+id/fragment_navigation_drawer_Layout"
+		xmlns:tools="http://schemas.android.com/tools"
+		tools:context="com.ryancordero.materialdesigned.NavigationDrawerFragment"
+		android:layout_width="match_parent"
+		android:layout_height="match_parent"
+		android:background="#EEE"
+		android:orientation="vertical">
+
+		<ImageView
+			android:layout_width="320dp"
+			android:layout_height="140dp"
+			android:src="@drawable/ic_abstract"
+			android:id="@+id/fragmentnavigationdrawerImageView1"/>
+
+		<android.support.v7.widget.RecyclerView
+			android:id="@+id/drawerList"
+			android:layout_width="match_parent"
+			android:layout_height="wrap_content"
+			android:layout_below="@id/fragmentnavigationdrawerImageView1">
+
+		</android.support.v7.widget.RecyclerView>
+
+	</RelativeLayout>
+
+</org.lucasr.dspec.DesignSpecFrameLayout>
+
